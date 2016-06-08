@@ -1,0 +1,347 @@
+html,
+body,
+ul,
+li,
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+button, input[type="text"] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+body{
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    background: #F2F2F2;
+}
+
+h1{
+    margin: 15px auto;
+    text-align: center;
+    font-size: 48px;
+    color: #99A7BD;
+}
+
+.hidden{
+    display: none !important;
+}
+
+#logo{
+    width: 108px;
+    height: 29px;
+    margin: 15px auto;
+    background: url("img/todo-logo-small.png") no-repeat;
+    background-size: 108px;
+}
+
+#header-main{
+    margin: 0 2%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+#add-todo-bar{
+    overflow: auto;
+}
+
+#wrap-add-todo-text{
+    float: left;
+    width: 90%;
+    padding: 8px 0 4px 0;
+    background-color: #FFF;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+#add-todo-text{
+    width: 100%;
+    font-size: 22px;
+}
+
+#add-todo-button{
+    float: left;
+    width: 10%;
+    height: 39px;
+    background-color: #4d90fe;
+    color: #FFF;
+    font-size: 24px;
+    border: 1px solid #3079ed;
+}
+
+#add-todo-button:hover{
+    background-color: #3079ed;
+}
+
+#filter-bar{
+    display: block;
+    list-style: none;
+    background-color: #f8f8f8;
+    color: #636363;
+
+}
+
+.filter-tab{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 32%;
+    text-align: center;
+    line-height: 40px;
+}
+
+.filter-tab-selected{
+    color: #4d90fe;
+    border-bottom: 2px solid #4d90fe;
+}
+
+#todo-list{
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.todo-item{
+    display: block;
+    overflow: hidden;
+    padding: 16px 8px 10px 16px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 4px;
+    background-color: #FCFCFC;
+    color: #484848;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 28px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    animation: add-item 0.4s;
+    transition: border 0.1s;
+}
+
+@keyframes add-item
+{
+    from {
+        box-sizing: border-box;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    to {
+        box-sizing: border-box;
+        height: 59px;
+    }
+}
+
+@keyframes delete-item
+{
+    from {
+        box-sizing: border-box;
+        height: 59px;
+        margin-bottom: 0;
+    }
+    to {
+
+        box-sizing: border-box;
+        height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.todo-item-selected{
+    border-left: 4px solid #4d90fe;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.todo-item-completed{
+    text-decoration: line-through;
+    color: #B7B7B7;
+}
+
+footer{
+    text-align: center;
+    color: #c1c1c1;
+    font-weight: lighter;
+    line-height: 20px;
+}
+
+#bottom-menu-bar{
+    position: fixed;
+    overflow: auto;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(248,248,248,0.96);
+    box-shadow: 0 -1px 2px rgba(0,0,0,0.2);
+
+    animation: show-menu-bar 0.3s;
+}
+@keyframes show-menu-bar {
+    from{
+        bottom: -50px;
+    }
+    to{
+        bottom: 0;
+    }
+}
+
+@keyframes hide-menu-bar {
+    from{
+        bottom: 0;
+    }
+    to{
+        bottom: -50px;
+    }
+}
+
+#toggle-complete-button, #remove-selected-button{
+    float: right;
+    box-sizing: border-box;
+    width: 90px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 2%;
+    text-align: center;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+#toggle-complete-button{
+    background-color: #4d90fe;
+}
+
+#remove-selected-button{
+    background-color: #DC5F5F;
+}
+
+/**
+ * my checkbox style
+ */
+.my-checkbox {
+    position: relative;
+    width: 0;
+    margin-left: 2%;
+    margin-top: 12px;
+}
+
+/**
+ * Create the box for the checkbox
+ */
+.my-checkbox label {
+    cursor: pointer;
+    position: absolute;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:1px solid #ddd;
+}
+
+/**
+ * Display the tick inside the checkbox
+ */
+.my-checkbox label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 2px;
+    border: 3px solid #4d90fe;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.my-checkbox label:before{
+    opacity: 0.4;
+    content: 'Select All';
+    position: absolute;
+    width: 70px;
+    left: 30px;
+    color: #3079ed;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.my-checkbox input[type=checkbox]:checked + label:after,
+.my-checkbox input[type=checkbox]:checked + label:before {
+    opacity: 1;
+}
+
+#edit-todo{
+    position: fixed;
+    display: flex;;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#edit-todo-dialog{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
+}
+
+#edit-todo-dialog h2{
+    display: block;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#edit-todo-dialog label{
+    display: block;
+    margin-left: 5%;
+    color: #636363;
+    font-size: 16px;
+}
+
+#accept-edit-button, #cancel-edit-button{
+    display: block;
+    position: absolute;
+    background: none;
+    bottom: 0;
+    right: 0;
+    margin-right: 5%;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #009688;
+}
+
+#accept-edit-button{
+    transform: translate(-125%, 0);
+}
+
+#edit-todo-text{
+    background: none;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-bottom: 60px;
+    border-bottom: 2px solid #d9d9d9;
+    font-size: 18px;
+ }
+
+#edit-todo-text:focus{
+    border-bottom: 2px solid #009688;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoMVC-Mobile</title>
+    <meta content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="common-todo.css">
+</head>
+<body>
+<header>
+    <!--<h1>Todo.</h1>-->
+    <div id="logo"></div>
+    <div id="header-main">
+        <div id="add-todo-bar">
+            <span id="wrap-add-todo-text">
+                <input id="add-todo-text" type="text">
+            </span>
+            <button id="add-todo-button" type="button"> + </button>
+        </div>
+        <ul id="filter-bar">
+            <li class="filter-tab filter-tab-selected">All</li>
+            <li class="filter-tab">Active</li>
+            <li class="filter-tab">Completed</li>
+        </ul>
+    </div>
+</header>
+
+<ul id="todo-list"></ul>
+
+<footer>
+    <p>
+        Copyright &copy 2016, Wentao MA
+    <br>
+        Tongji University
+    </p>
+</footer>
+
+<div id="bottom-menu-bar" class="hidden">
+
+    <button id="remove-selected-button" type="button"> Remove </button>
+    <button id="toggle-complete-button" type="button"> Toggle </button>
+
+
+    <div class="my-checkbox">
+        <input id="select-all-button" type="checkbox">
+        <label for="select-all-button"></label>
+    </div>
+
+</div>
+
+<div id="edit-todo" class="hidden">
+    <div id="edit-todo-dialog">
+        <h2>Edit Todo</h2>
+        <label for="edit-todo-text">Please edit todo here:</label>
+        <input id="edit-todo-text" type="text">
+        <button id="accept-edit-button" type="button">Accept</button>
+        <button id="cancel-edit-button" type="button">Cancel</button>
+    </div>
+</div>
+
+
+<script src="model.js"></script>
+<script src="provider.js"></script>
+<script src="todo.js"></script>
+
+</body>
+</html>

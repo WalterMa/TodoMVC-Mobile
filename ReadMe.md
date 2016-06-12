@@ -3,6 +3,9 @@
      WentaoMA, 2016 Tongji University
 
 
+## 演示地址
+http://cdn.sinacloud.net/mawentao.name/TodoMVC-Mobile.html
+
 ## 特色功能
 1. 长按弹出编辑框
 2. 底部弹出菜单，及多选操作
